@@ -41,7 +41,7 @@
     {
       "id": "step-3-apis-layer",
       "title": "Data Sources Layer",
-      "description": "The apis/ directory contains 27+ independent source modules. Each exports a briefing() function and can run standalone. Sources include FRED (economic), GDELT (news), YFinance (markets), NASA FIRMS (fires), ships (maritime), and more.",
+      "description": "The apis/ directory contains 27+ independent source modules. Each exports a briefing function and can run standalone. Sources include FRED (economic), GDELT (news), YFinance (markets), NASA FIRMS (fires), ships (maritime), and more.",
       "estimatedTime": 180,
       "focusDirectory": "apis",
       "highlightLayers": [
