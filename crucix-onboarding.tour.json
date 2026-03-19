@@ -12,7 +12,7 @@
     {
       "id": "step-1-overview",
       "title": "Welcome to Crucix",
-      "description": "Crucix is an intelligence briefing platform that aggregates 27+ data sources in parallel. It synthesizes raw data into actionable insights, detects changes (deltas), and alerts via Telegram/Discord. Pure ESM, minimal dependencies, graceful degradation.",
+      "description": "Crucix is an intelligence briefing platform that aggregates 27+ data sources in parallel. It synthesizes raw data into actionable insights, detects changes, and alerts via Telegram/Discord. Pure ESM, minimal dependencies, graceful degradation.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "colorMode": "fileTypes"
