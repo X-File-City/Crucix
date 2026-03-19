@@ -130,7 +130,7 @@
     {
       "id": "step-7-testing",
       "title": "Testing",
-      "description": "Tests use Node.js built-in test runner. LLM provider tests in test/ cover unit and integration tests for OpenRouter and MiniMax. Run with: node --test test/*.test.mjs",
+      "description": "Tests use Node.js built-in test runner. LLM provider tests cover unit and integration tests for OpenRouter and MiniMax in the test/ directory.",
       "estimatedTime": 60,
       "focusDirectory": "test",
       "highlightLayers": [
