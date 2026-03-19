@@ -1,0 +1,182 @@
+{
+  "id": "crucix-onboarding",
+  "title": "Crucix Onboarding Tour",
+  "description": "Learn the structure and key components of the Crucix intelligence platform",
+  "version": "1.0.0",
+  "audience": "New Developers",
+  "prerequisites": [
+    "Node.js 22+",
+    "Basic understanding of ES modules"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Welcome to Crucix",
+      "description": "Crucix is an intelligence briefing platform that aggregates 27+ data sources in parallel. It synthesizes raw data into actionable insights, detects changes (deltas), and alerts via Telegram/Discord. Pure ESM, minimal dependencies, graceful degradation.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-2-entry-points",
+      "title": "Entry Points",
+      "description": "Three ways to run Crucix: server (full dashboard), standalone sweep (CLI), or diagnostics. The server orchestrates the sweep cycle, SSE broadcasting, and alerting.",
+      "estimatedTime": 120,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "entry-points",
+          "name": "Entry Points",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "server.mjs", "type": "file" },
+            { "path": "diag.mjs", "type": "file" }
+          ],
+          "opacity": 0.85,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-3-apis-layer",
+      "title": "Data Sources Layer",
+      "description": "The apis/ directory contains 27+ independent source modules. Each exports a briefing() function and can run standalone. Sources include FRED (economic), GDELT (news), YFinance (markets), NASA FIRMS (fires), ships (maritime), and more.",
+      "estimatedTime": 180,
+      "focusDirectory": "apis",
+      "highlightLayers": [
+        {
+          "id": "sources",
+          "name": "27 Data Sources",
+          "color": "#22c55e",
+          "items": [
+            { "path": "apis/sources/fred.mjs", "type": "file" },
+            { "path": "apis/sources/gdelt.mjs", "type": "file" },
+            { "path": "apis/sources/yfinance.mjs", "type": "file" },
+            { "path": "apis/sources/ships.mjs", "type": "file" },
+            { "path": "apis/sources", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-4-lib-layer",
+      "title": "Core Services",
+      "description": "lib/ contains three core services: llm/ (6 AI providers via raw fetch), delta/ (change detection engine with hot/cold memory), and alerts/ (Telegram/Discord bots with decay system).",
+      "estimatedTime": 180,
+      "focusDirectory": "lib",
+      "highlightLayers": [
+        {
+          "id": "lib-services",
+          "name": "Core Services",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "lib/llm", "type": "directory" },
+            { "path": "lib/delta", "type": "directory" },
+            { "path": "lib/alerts", "type": "directory" }
+          ],
+          "opacity": 0.85,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-5-dashboard",
+      "title": "Dashboard & UI",
+      "description": "The dashboard/ directory contains the frontend: jarvis.html (WebGL globe/map HUD), inject.mjs (data synthesizer), and loading.html. Users see live updates via SSE.",
+      "estimatedTime": 120,
+      "focusDirectory": "dashboard",
+      "highlightLayers": [
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "dashboard/public/jarvis.html", "type": "file" },
+            { "path": "dashboard/inject.mjs", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-6-configuration",
+      "title": "Configuration",
+      "description": "crucix.config.mjs is the runtime config with env var overrides. .env.example documents all 18+ supported environment variables. Configure API keys (FRED, FIRMS, EIA), LLM providers, alerting bots, and refresh intervals.",
+      "estimatedTime": 90,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "config",
+          "name": "Configuration",
+          "color": "#ef4444",
+          "items": [
+            { "path": "crucix.config.mjs", "type": "file" },
+            { "path": ".env.example", "type": "file" },
+            { "path": "package.json", "type": "file" }
+          ],
+          "opacity": 0.85,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-7-testing",
+      "title": "Testing",
+      "description": "Tests use Node.js built-in test runner. LLM provider tests in test/ cover unit and integration tests for OpenRouter and MiniMax. Run with: node --test test/*.test.mjs",
+      "estimatedTime": 60,
+      "focusDirectory": "test",
+      "highlightLayers": [
+        {
+          "id": "tests",
+          "name": "Tests",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "test", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-8-next-steps",
+      "title": "Next Steps",
+      "description": "Start the server with npm start, add new sources following CONTRIBUTING.md patterns, or explore lib/llm/ to add LLM providers. Check README.md for full documentation and docker-compose.yml for deployment.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "docs",
+          "name": "Documentation",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "README.md", "type": "file" },
+            { "path": "CONTRIBUTING.md", "type": "file" },
+            { "path": "docs", "type": "directory" }
+          ],
+          "opacity": 0.75,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    }
+  ],
+  "metadata": {
+    "author": "OpenCode",
+    "createdAt": "2026-03-18T00:00:00.000Z",
+    "tags": [
+      "onboarding",
+      "tutorial",
+      "crucix"
+    ]
+  }
+}
